@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{724AF340-0A79-4EF9-BE20-1A449CAF0647}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransactRules.Runtime</RootNamespace>
+    <AssemblyName>TransactRules.Runtime</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Accounts\Account.cs" />
+    <Compile Include="Accounts\Instalment.cs" />
+    <Compile Include="CodeGen\AccountClassTemplate.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AccountClassTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CodeGen\AccountClassTemplate.Custom.cs" />
+    <Compile Include="CodeGen\AccountFactory.cs" />
+    <Compile Include="Accounts\AccountGroup.cs" />
+    <Compile Include="Accounts\PartyRole.cs" />
+    <Compile Include="Accounts\Portfolio.cs" />
+    <Compile Include="Accounts\Position.cs" />
+    <Compile Include="ITemporalPropertyValue.cs" />
+    <Compile Include="IPropertyValue.cs" />
+    <Compile Include="TransactionClient.cs" />
+    <Compile Include="ReferenceCode\LoanGiven.cs" />
+    <Compile Include="ReferenceCode\SavingsAccount.cs" />
+    <Compile Include="Schedules\Calendar.cs" />
+    <Compile Include="Schedules\HolidayDate.cs" />
+    <Compile Include="Schedules\IBusinessDayCalculator.cs" />
+    <Compile Include="Schedules\ScheduleDate.cs" />
+    <Compile Include="Values\AmountValue.cs" />
+    <Compile Include="Data\AccountRepository.cs" />
+    <Compile Include="Data\IAccountRepository.cs" />
+    <Compile Include="Data\IPartyRepository.cs" />
+    <Compile Include="Data\PartyRepository.cs" />
+    <Compile Include="Values\DateValue.cs" />
+    <Compile Include="Schedules\Schedule.cs" />
+    <Compile Include="Rates\RateValue.cs" />
+    <Compile Include="Accounts\Transaction.cs" />
+    <Compile Include="Parties\Party.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Values\OptionValue.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransactRule.Calculations\TransactRules.Calculations.csproj">
+      <Project>{E15F75BC-3B8B-4FC3-A619-EB112D2B4D7E}</Project>
+      <Name>TransactRules.Calculations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactRules.Configuration\TransactRules.Configuration.csproj">
+      <Project>{A859749E-D7B7-47A4-93E0-51B08D644003}</Project>
+      <Name>TransactRules.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactRules.Core\TransactRules.Core.csproj">
+      <Project>{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC}</Project>
+      <Name>TransactRules.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="CodeGen\AccountClassTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AccountClassTemplate.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

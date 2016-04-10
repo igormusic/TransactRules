@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A859749E-D7B7-47A4-93E0-51B08D644003}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransactRules.Configuration</RootNamespace>
+    <AssemblyName>TransactRules.Configuration</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountType.cs" />
+    <Compile Include="AmountType.cs" />
+    <Compile Include="BusinessDayCalculation.cs" />
+    <Compile Include="Data\AccountTypeRepository.cs" />
+    <Compile Include="Data\IAccountTypeRepository.cs" />
+    <Compile Include="DateType.cs" />
+    <Compile Include="InstalmentType.cs" />
+    <Compile Include="OptionType.cs" />
+    <Compile Include="PartyRoleType.cs" />
+    <Compile Include="PartyType.cs" />
+    <Compile Include="PositionType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RateType.cs" />
+    <Compile Include="ScheduledTransaction.cs" />
+    <Compile Include="ScheduleType.cs" />
+    <Compile Include="TransactionOperation.cs" />
+    <Compile Include="TransactionRuleType.cs" />
+    <Compile Include="TransactionType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransactRules.Core.nHibernate\TransactRules.Core.NHibernate.csproj">
+      <Project>{4FE5B0AB-8475-46DC-9634-8BE5BE7260A0}</Project>
+      <Name>TransactRules.Core.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactRules.Core\TransactRules.Core.csproj">
+      <Project>{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC}</Project>
+      <Name>TransactRules.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

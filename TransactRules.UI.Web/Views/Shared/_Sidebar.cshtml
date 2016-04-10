@@ -1,0 +1,88 @@
+﻿@using TransactRules.UI.Web.Models
+<div id="sidebar" class="">
+    <div class="scrollbar">
+        <div class="track">
+            <div class="thumb">
+                <div class="end">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="viewport ">
+        <div class="overview collapse">
+            <div class="search row-fluid container">
+                <h2>
+                    Search</h2>
+                <form class="form-search">
+                <div class="input-append">
+                    <input type="text" class=" search-query" placeholder="">
+                    <button class="btn_search color_4">
+                        Search</button>
+                </div>
+                </form>
+            </div>
+           <ul id="sidebar_menu" class="navbar nav nav-list container full">
+@*                <li class="accordion-group active color_4">
+                    <a class="widgets" href="index.html"> 
+                    <img src="/Content/img/menu_icons/dashboard.png">
+                    <span>Dashboard</span> </a></li>
+                <li class="accordion-group color_7">
+                    <a class="accordion-toggle widgets collapsed " data-toggle="collapse" data-parent="#sidebar_menu" href="#collapse1">
+                    <img src="/Content/img/menu_icons/forms.png">
+                    <span>Form Elements</span></a>
+                    <ul id="collapse1" class="accordion-body collapse">
+                        <li><a href="forms_general.html">General</a></li>
+                        <li><a href="forms_wizard.html">Wizards</a></li>
+                        <li><a href="forms_validation.html">Validation</a></li>
+                        <li><a href="forms_editor.html">Editor</a></li>
+                    </ul>
+                </li>*@
+                @{              
+                    int collapseCount = 1;
+                    foreach (var menuItem in TransactRules.UI.Web.Models.NavigationModel.Current.NavigationMenus)
+                    {
+                    <li class="accordion-group @(menuItem.IsActive ? "active" : "") @menuItem.Color.ToString()">
+                        @if (menuItem.NavigationLinks.Count == 0)
+                        {
+                        <a class="widgets" href="@menuItem.LinkUrl">
+                            <img src="@Url.Content(menuItem.ImageUrl)" alt="">
+                            <span>@menuItem.Title</span>
+                        </a>                       
+                        }
+                        else
+                        {
+                        <a class="accordion-toggle widgets @(menuItem.IsCollapsed ? " collapsed" : "")" data-toggle="@(menuItem.IsCollapsed ? "collapse" : "")" data-parent="#sidebar_menu" href="@(menuItem.IsCollapsed && string.IsNullOrEmpty(menuItem.LinkUrl) ? "#collapse" + collapseCount.ToString() : menuItem.LinkUrl)">
+                            <img src="@Url.Content(menuItem.ImageUrl)" alt="">
+                            <span>@menuItem.Title</span>
+                        </a> 
+                        <ul id="@("collapse" + collapseCount.ToString())" class="accordion-body collapse">
+                            @foreach (var navLink in menuItem.NavigationLinks)
+                            {
+                            <li><a href="@navLink.Url">@navLink.Title</a></li>
+                            }
+                        </ul>
+                        collapseCount++;
+                        }
+                    </li>
+                    }
+                }
+            </ul>
+            <div class="menu_states row-fluid container ">
+                <h2 class="pull-left">
+                    Menu Settings</h2>
+                <div class="options pull-right">
+                    <button id="menu_state_1" class="color_4" rel="tooltip" data-state="sidebar_icons"
+                        data-placement="top" data-original-title="Icon Menu">
+                        1</button>
+                    <button id="menu_state_2" class="color_4 active" rel="tooltip" data-state="sidebar_default"
+                        data-placement="top" data-original-title="Fixed Menu">
+                        2</button>
+                    <button id="menu_state_3" class="color_4" rel="tooltip" data-placement="top" data-state="sidebar_hover"
+                        data-original-title="Floating on Hover Menu">
+                        3</button>
+                </div>
+            </div>
+            <!-- End sidebar_box -->
+        </div>
+    </div>
+</div>

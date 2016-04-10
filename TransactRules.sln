@@ -1,0 +1,103 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.Core", "TransactRules.Core\TransactRules.Core.csproj", "{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.Core.NHibernate", "TransactRules.Core.nHibernate\TransactRules.Core.NHibernate.csproj", "{4FE5B0AB-8475-46DC-9634-8BE5BE7260A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.Configuration", "TransactRules.Configuration\TransactRules.Configuration.csproj", "{A859749E-D7B7-47A4-93E0-51B08D644003}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.Test", "TransactRules.Test\TransactRules.Test.csproj", "{6290BD81-08A6-4188-A0E9-1FBCE8DF4498}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C4EE68C-125E-4483-B581-E877CDBF42D6}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		TransactRules.vsmdi = TransactRules.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.Runtime", "TransactRules.Runtime\TransactRules.Runtime.csproj", "{724AF340-0A79-4EF9-BE20-1A449CAF0647}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.Runtime.Test", "TransactRules.Runtime.Test\TransactRules.Runtime.Test.csproj", "{2C75CDC8-50B4-42E5-AE84-4EE7AE3F15FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configuration", "Configuration", "{11C774EF-4ED6-4BAF-9176-9B57995A603A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{71E0AD25-7A20-43BE-A427-A707A89A4640}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Runtime", "Runtime", "{EF4DDFC6-2E9E-436B-B3E3-7ECD6A37F7AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.Calculations", "TransactRule.Calculations\TransactRules.Calculations.csproj", "{E15F75BC-3B8B-4FC3-A619-EB112D2B4D7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Calculations", "Calculations", "{CB6C2116-5CF7-4090-9723-1E98E39C4503}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{ABCD32FC-9C98-43AF-A52C-4F14E7A6F6CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.UI.Core", "TransactRules.UI.Core\TransactRules.UI.Core.csproj", "{73D6C87F-4F59-4B8F-ADC5-B4042EAAC6D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransactRules.UI.Web", "TransactRules.UI.Web\TransactRules.UI.Web.csproj", "{73594981-6F12-4605-B82E-D1ED37B004E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{79714BDE-7391-4B38-8BB4-835BC769D166}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = TransactRules.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FE5B0AB-8475-46DC-9634-8BE5BE7260A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FE5B0AB-8475-46DC-9634-8BE5BE7260A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FE5B0AB-8475-46DC-9634-8BE5BE7260A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FE5B0AB-8475-46DC-9634-8BE5BE7260A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A859749E-D7B7-47A4-93E0-51B08D644003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A859749E-D7B7-47A4-93E0-51B08D644003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A859749E-D7B7-47A4-93E0-51B08D644003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A859749E-D7B7-47A4-93E0-51B08D644003}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6290BD81-08A6-4188-A0E9-1FBCE8DF4498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6290BD81-08A6-4188-A0E9-1FBCE8DF4498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6290BD81-08A6-4188-A0E9-1FBCE8DF4498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6290BD81-08A6-4188-A0E9-1FBCE8DF4498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{724AF340-0A79-4EF9-BE20-1A449CAF0647}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{724AF340-0A79-4EF9-BE20-1A449CAF0647}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{724AF340-0A79-4EF9-BE20-1A449CAF0647}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{724AF340-0A79-4EF9-BE20-1A449CAF0647}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C75CDC8-50B4-42E5-AE84-4EE7AE3F15FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C75CDC8-50B4-42E5-AE84-4EE7AE3F15FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C75CDC8-50B4-42E5-AE84-4EE7AE3F15FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C75CDC8-50B4-42E5-AE84-4EE7AE3F15FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E15F75BC-3B8B-4FC3-A619-EB112D2B4D7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E15F75BC-3B8B-4FC3-A619-EB112D2B4D7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E15F75BC-3B8B-4FC3-A619-EB112D2B4D7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E15F75BC-3B8B-4FC3-A619-EB112D2B4D7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73D6C87F-4F59-4B8F-ADC5-B4042EAAC6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D6C87F-4F59-4B8F-ADC5-B4042EAAC6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D6C87F-4F59-4B8F-ADC5-B4042EAAC6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D6C87F-4F59-4B8F-ADC5-B4042EAAC6D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73594981-6F12-4605-B82E-D1ED37B004E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73594981-6F12-4605-B82E-D1ED37B004E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73594981-6F12-4605-B82E-D1ED37B004E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73594981-6F12-4605-B82E-D1ED37B004E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4FE5B0AB-8475-46DC-9634-8BE5BE7260A0} = {71E0AD25-7A20-43BE-A427-A707A89A4640}
+		{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC} = {71E0AD25-7A20-43BE-A427-A707A89A4640}
+		{A859749E-D7B7-47A4-93E0-51B08D644003} = {11C774EF-4ED6-4BAF-9176-9B57995A603A}
+		{724AF340-0A79-4EF9-BE20-1A449CAF0647} = {EF4DDFC6-2E9E-436B-B3E3-7ECD6A37F7AA}
+		{E15F75BC-3B8B-4FC3-A619-EB112D2B4D7E} = {CB6C2116-5CF7-4090-9723-1E98E39C4503}
+		{73D6C87F-4F59-4B8F-ADC5-B4042EAAC6D5} = {ABCD32FC-9C98-43AF-A52C-4F14E7A6F6CF}
+		{73594981-6F12-4605-B82E-D1ED37B004E3} = {ABCD32FC-9C98-43AF-A52C-4F14E7A6F6CF}
+	EndGlobalSection
+EndGlobal

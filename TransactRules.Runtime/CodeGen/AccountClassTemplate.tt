@@ -1,0 +1,374 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="TransactRules.Configuration" #>
+<#@ import namespace="TransactRules.Runtime" #>
+<#@ import namespace="TransactRules.Runtime.Accounts" #>
+
+using System;
+using System.Linq;
+using System.Collections.Generic;
+using TransactRules.Core.Utilities;
+using TransactRules.Configuration;
+using TransactRules.Runtime;
+using TransactRules.Runtime.Accounts;
+using TransactRules.Runtime.Schedules;
+using TransactRules.Runtime.Values;
+using TransactRules.Runtime.Rates;
+
+
+namespace TransactRules.Runtime
+{
+    public class <#= Model.Name #>:TransactionClient
+    {		
+		public override void Initialize()
+		{
+<#  foreach (var scheduleType in Model.ScheduleTypes){ #>
+			
+			Schedule local<#=scheduleType.Name#> = new Schedule();		
+			local<#=scheduleType.Name#>.ScheduleType = "<#=scheduleType.Name#>";
+			local<#=scheduleType.Name#>.BusinessDayCalculator = Account.BusinessDayCalculator;
+<# if(scheduleType.IsCalculated){ #>
+			Set<#=scheduleType.Name#>CalculatedProperties(local<#=scheduleType.Name#>); 
+<#	} else{#>
+			Set<#=scheduleType.Name#>DefaultProperties(local<#=scheduleType.Name#>); 
+<#  } #>
+			Account.Schedules.Add(local<#=scheduleType.Name#>);			
+<#  } #>
+<#  foreach (var optionType in Model.OptionTypes){ #>
+			
+			OptionValue local<#=optionType.Name#> = new OptionValue();		
+			local<#=optionType.Name#>.OptionType = "<#=optionType.Name#>";
+			local<#=optionType.Name#>.OptionValues = <#=optionType.OptionListExpression#>;
+			Account.Options.Add(local<#=optionType.Name#>);			
+<#  } #>
+<#  foreach (var rateType in Model.RateTypes){ #>
+			
+			RateValue local<#=rateType.Name#> = new RateValue();		
+			local<#=rateType.Name#>.RateType = "<#=rateType.Name#>";
+			Account.Rates.Add(local<#=rateType.Name#>);			
+<#  } #>
+
+		}
+
+<#  foreach (var positionType in Model.PositionTypes)
+    { #>
+		
+		private Position _<#= positionType.Name #>;
+		
+		public Position <#= positionType.Name #> { 
+			get{
+				if(_<#= positionType.Name #> == null)
+				{
+					_<#= positionType.Name #> = Account.GetPosition("<#= positionType.Name #>");	
+				}
+				
+				return _<#= positionType.Name #>;
+			}
+		}
+<#  } #>
+
+<#  foreach (var amountType in Model.AmountTypes)
+    { #>
+		
+		private AmountValue _<#= amountType.Name #>;
+		
+		public AmountValue <#= amountType.Name #> { 
+			get{
+				if(_<#= amountType.Name #> == null)
+				{
+					_<#= amountType.Name #> = Account.GetAmount("<#= amountType.Name #>");	
+				}
+				
+				return _<#= amountType.Name #>;
+			}
+		}
+<#  } #>
+
+<#  foreach (var dateType in Model.DateTypes)
+    { #>
+		
+		private DateValue _<#= dateType.Name #>;
+		
+		public DateValue <#= dateType.Name #> { 
+			get{
+				if(_<#= dateType.Name #> == null)
+				{
+					_<#= dateType.Name #> = Account.GetDate("<#= dateType.Name #>");	
+				}
+				
+				return _<#= dateType.Name #>;
+			}
+		}
+<#  } #>
+
+<#  foreach (var optionType in Model.OptionTypes)
+    { #>
+		
+		private OptionValue _<#= optionType.Name #>;
+		
+		public OptionValue <#= optionType.Name #> { 
+			get{
+				if(_<#= optionType.Name #> == null)
+				{
+					_<#= optionType.Name #> = Account.GetOption("<#= optionType.Name #>");	
+				}
+				
+				return _<#= optionType.Name #>;
+			}
+		}
+<#  } #>
+
+<#  foreach (var rateType in Model.RateTypes)
+    { #>
+		
+		private RateValue _<#= rateType.Name #>;
+		
+		public RateValue <#= rateType.Name #> { 
+			get{
+				if(_<#= rateType.Name #> == null)
+				{
+					_<#= rateType.Name #> = Account.GetRate("<#= rateType.Name #>");	
+				}
+				
+				return _<#= rateType.Name #>;
+			}
+		}
+<#  } #>
+
+		public override void StartOfDay(){
+			var valueDate  = SessionState.Current.ValueDate;
+<#
+	foreach(var scheduledTransaction in Model.ScheduledTransactions.OrderBy(st=>st.Sequence))
+	{
+		if(scheduledTransaction.Timing == ScheduledTransactionTiming.StartOfDay)
+		{if(scheduledTransaction.ScheduleType != null)
+		{#>
+			if(<#= scheduledTransaction.ScheduleType.Name #>.IsDue())
+<#		}
+		else
+		{#>
+			if(<#= scheduledTransaction.DateType.Name #>.IsDue())
+<#}#>
+			{
+<#		if(scheduledTransaction.TransactionType.HasMaximumPrecission)
+{#>
+				var amount = <#= scheduledTransaction.AmountExpression #>;
+<#		}
+		else
+		{#>
+				var amount = decimal.Round(<#= scheduledTransaction.AmountExpression #>,2);
+<#		}#>
+				CreateTransaction(transactionType: "<#= scheduledTransaction.TransactionType.Name #>", amount: amount);
+			}
+<#		foreach(var instalmentType in Model.InstalmentTypes)
+			if(instalmentType.Timing == ScheduledTransactionTiming.StartOfDay)
+			{#>
+			if(<#=instalmentType.Name#>.ContainsKey(valueDate))
+            {
+                var instalment = <#=instalmentType.Name#>[valueDate];
+
+                CreateTransaction(transactionType: instalment.TransactionType, amount: instalment.Amount);
+            }
+<#			}			
+		}
+	}
+#>
+		}
+		
+		public override void EndOfOfDay(){
+			var valueDate  = SessionState.Current.ValueDate;
+<#
+	foreach(var scheduledTransaction in Model.ScheduledTransactions.OrderBy(st=>st.Sequence))
+	{
+		if(scheduledTransaction.Timing == ScheduledTransactionTiming.EndOfDay)
+		{if(scheduledTransaction.ScheduleType != null)
+		{#>
+			if(<#= scheduledTransaction.ScheduleType.Name #>.IsDue())
+<#		}
+		else
+		{#>
+			if(<#= scheduledTransaction.DateType.Name #>.IsDue())
+<#}#>
+			{
+<#		if(scheduledTransaction.TransactionType.HasMaximumPrecission)
+{#>
+				var amount = <#= scheduledTransaction.AmountExpression #>;
+<#		}
+		else
+		{#>
+				var amount = decimal.Round(<#= scheduledTransaction.AmountExpression #>,2);
+<#		}#>
+				CreateTransaction(transactionType: "<#= scheduledTransaction.TransactionType.Name #>", amount: amount);
+			}
+<#		foreach(var instalmentType in Model.InstalmentTypes)
+			if(instalmentType.Timing == ScheduledTransactionTiming.EndOfDay)
+			{#>
+			if(<#=instalmentType.Name#>.ContainsKey(valueDate))
+            {
+                var instalment = <#=instalmentType.Name#>[valueDate];
+
+                CreateTransaction(transactionType: instalment.TransactionType, amount: instalment.Amount);
+            }
+<#			}			
+		}
+	}
+#>
+		}
+		
+		public override  void OnDataChanged(){
+			UpdateSchedules();
+		}
+		
+		private void UpdateSchedules(){		
+<#  foreach (var scheduleType in Model.ScheduleTypes)
+{ if(scheduleType.IsCalculated) 
+	{ #>
+			Set<#=scheduleType.Name#>CalculatedProperties(<#=scheduleType.Name#>); 	
+<#  }
+}#>
+		}
+
+<#  foreach (var scheduleType in Model.ScheduleTypes)
+{ #>
+		
+		private Schedule _<#= scheduleType.Name #>;
+		
+		public Schedule <#= scheduleType.Name #> { 
+			get{
+				if(_<#= scheduleType.Name #> == null)
+				{
+					_<#= scheduleType.Name #> = Account.GetSchedule("<#= scheduleType.Name #>");
+				}
+				
+				return _<#= scheduleType.Name #>;
+			}
+		}
+<#}#>
+
+<#  foreach (var scheduleType in Model.ScheduleTypes)
+{if(scheduleType.IsCalculated) 
+	{ #>
+		protected virtual void Set<#=scheduleType.Name#>CalculatedProperties(Schedule <#= scheduleType.Name #>)
+		{
+			<#= scheduleType.Name #>.StartDate = <#=scheduleType.StartDateExpression#>;
+			<#= scheduleType.Name #>.Interval = <#=scheduleType.IntervalExpression#>;
+			<#= scheduleType.Name #>.EndType = ScheduleEndType.<#=scheduleType.EndType.ToString()#>;
+			<#= scheduleType.Name #>.BusinessDayCalculation = BusinessDayCalculation.<#=scheduleType.BusinessDayCalculation.ToString()#>;
+			<#= scheduleType.Name #>.Frequency = ScheduleFrequency.<#= scheduleType.Frequency.ToString() #>;
+			
+<#  	if(scheduleType.EndType == ScheduleEndType.EndDate)
+		{ #>
+			<#= scheduleType.Name #>.EndDate = <#=scheduleType.EndDateExpression#>;
+<#  	} else if(scheduleType.EndType == ScheduleEndType.Repeats)
+		{ #>
+			<#= scheduleType.Name #>.NumberOfRepeats = <#=scheduleType.NumberOfRepeatsExpression#>;
+<# 	} #>
+		} 
+<#  } else
+	{ #>    
+		protected virtual void Set<#=scheduleType.Name#>DefaultProperties(Schedule <#= scheduleType.Name #>)
+		{		
+			<#= scheduleType.Name #>.BusinessDayCalculation = BusinessDayCalculation.<#=scheduleType.BusinessDayCalculation.ToString()#>;
+			<#= scheduleType.Name #>.Frequency = ScheduleFrequency.<#= scheduleType.Frequency.ToString() #>;		
+<#
+		if(!string.IsNullOrWhiteSpace(scheduleType.StartDateExpression)){ #>
+			<#= scheduleType.Name #>.StartDate = <#=scheduleType.StartDateExpression#>;
+<#  	}
+		if(!string.IsNullOrWhiteSpace(scheduleType.EndDateExpression)){ #>
+			<#= scheduleType.Name #>.EndDate = <#=scheduleType.EndDateExpression#>;
+<#  	} 
+		if(!string.IsNullOrWhiteSpace(scheduleType.IntervalExpression)){ #>
+			<#= scheduleType.Name #>.Interval = <#=scheduleType.IntervalExpression#>;
+<#  	} #>
+			<#= scheduleType.Name #>.EndType = ScheduleEndType.<#=scheduleType.EndType.ToString()#>;
+<#
+		if(!string.IsNullOrWhiteSpace(scheduleType.NumberOfRepeatsExpression)){ #>
+			<#= scheduleType.Name #>.NumberOfRepeats = <#=scheduleType.NumberOfRepeatsExpression#>;
+<#  	} #>
+		}
+<#  }
+} #>			
+		public override void ProcessTransaction(Transaction transaction){
+			switch (transaction.TransactionType)
+			{
+<#  foreach (var transactionType in Model.TransactionTypes)
+    {#>
+				case "<#= transactionType.Name #>":
+<#  	foreach (TransactionRuleType rule in transactionType.TransactionRules)
+        {
+            if (rule.TransactionOperation == TransactionOperation.Add)
+            { #>
+					<#= rule.PositionType.Name #>.Value += transaction.Amount;
+<# 			}
+            else
+            { #>
+					<#= rule.PositionType.Name #>.Value -= transaction.Amount;
+<# 			}
+        } #>
+					break;
+<# } #>
+			}
+		}
+
+<#  foreach (var instalmentType in Model.InstalmentTypes)
+{#>
+		private Dictionary<DateTime, Instalment> _<#=instalmentType.Name#>;
+
+        public Dictionary<DateTime, Instalment> <#=instalmentType.Name#> {
+            get {
+                if (_<#=instalmentType.Name#> == null)
+                {
+                    var instalments = Account.GetInstalments("<#=instalmentType.Name#>");
+
+                    if (instalments.Count() == 0)
+                    {
+                        Initialize<#=instalmentType.Name#>();
+                        instalments = Account.GetInstalments("<#=instalmentType.Name#>");
+                    }
+
+                    _<#=instalmentType.Name#> = instalments.ToDictionary(i => i.ValueDate);
+                }
+                return _<#=instalmentType.Name#>;
+            }
+        }
+
+        private void Initialize<#=instalmentType.Name#>()
+        {
+            foreach (var date in <#=instalmentType.ScheduleType.Name#>.GetAllDates())
+            {
+                Account.Instalments.Add(new Instalment { InstalmentType = "<#=instalmentType.Name#>", TransactionType = "<#=instalmentType.TransactionType.Name#>", ValueDate = date });
+            }
+        }
+
+        public void Calculate<#=instalmentType.Name#>Instalments() {
+            var amount = Solver.FindFunctionZero( (value) =>this.GetClosingBalanceFor<#=instalmentType.Name#>Value(value), (decimal)0, (decimal)1000000000000000, (decimal) 0.01);
+        }
+
+        public decimal GetClosingBalanceFor<#=instalmentType.Name#>Value(decimal value) {
+			
+			SetFutureInstalmentValue("<#=instalmentType.Name#>", ScheduledTransactionTiming.<#=instalmentType.Timing.ToString()#>, value);
+
+            var lastDate = <#=instalmentType.ScheduleType.Name#>.GetAllDates().Last();
+
+            Account.Snapshot();
+
+            Forecast(lastDate);
+
+            var result = <#=instalmentType.PrincipalPositionType.Name#>.Value;
+
+            Account.RestoreSnapshot();
+
+            return result;
+        }
+<#}#>
+        public override void CalculateInstaments()
+		{
+<#  foreach (var instalmentType in Model.InstalmentTypes)
+{#>
+            CalculateRedemptionsInstalments();
+<#}#>
+		}
+	}
+}

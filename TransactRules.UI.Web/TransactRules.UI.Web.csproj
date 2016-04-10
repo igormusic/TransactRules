@@ -1,0 +1,1509 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{73594981-6F12-4605-B82E-D1ED37B004E3}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TransactRules.UI.Web</RootNamespace>
+    <AssemblyName>TransactRules.UI.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.6\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountTypeAPIController.cs" />
+    <Compile Include="Controllers\AccountTypeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\NavigationLink.cs" />
+    <Compile Include="Models\NavigationModel.cs" />
+    <Compile Include="Models\ThemeColor.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\NavigationMenu.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\css\base.css" />
+    <Content Include="Content\css\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\css\images\datatables\sort_both.png" />
+    <Content Include="Content\css\images\favicon.png" />
+    <Content Include="Content\css\images\icons-s195a86524b.png" />
+    <Content Include="Content\css\images\icons-s5262c54f53.png" />
+    <Content Include="Content\css\images\icons\arrow_down.png" />
+    <Content Include="Content\css\images\icons\arrow_next.png" />
+    <Content Include="Content\css\images\icons\arrow_next_small.png" />
+    <Content Include="Content\css\images\icons\arrow_prev.png" />
+    <Content Include="Content\css\images\icons\checkbox-checked.png" />
+    <Content Include="Content\css\images\icons\checkbox.png" />
+    <Content Include="Content\css\images\icons\comment-right.png" />
+    <Content Include="Content\css\images\icons\comment.png" />
+    <Content Include="Content\css\images\icons\datepicker-next-hover.png" />
+    <Content Include="Content\css\images\icons\datepicker-next.png" />
+    <Content Include="Content\css\images\icons\datepicker-prev-hover.png" />
+    <Content Include="Content\css\images\icons\datepicker-prev.png" />
+    <Content Include="Content\css\images\icons\logo.png" />
+    <Content Include="Content\css\images\icons\menu_state_1.png" />
+    <Content Include="Content\css\images\icons\menu_state_2.png" />
+    <Content Include="Content\css\images\icons\menu_state_3.png" />
+    <Content Include="Content\css\images\icons\radio-checked.png" />
+    <Content Include="Content\css\images\icons\radio.png" />
+    <Content Include="Content\css\images\icons\search.png" />
+    <Content Include="Content\css\images\search.png" />
+    <Content Include="Content\css\images\ui-bg_fine-grain_10_e7e7e7_60x60.png" />
+    <Content Include="Content\css\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_flat_0_ef4622_40x100.png" />
+    <Content Include="Content\css\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-hard_100_e1e1e1_1x100.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-hard_100_eeeeee_1x100.png" />
+    <Content Include="Content\css\images\ui-bg_highlight-hard_75_dddddd_1x100.png" />
+    <Content Include="Content\css\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Content\css\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_525d66_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\css\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\css\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Content\css\twitter\bootstrap.css" />
+    <Content Include="Content\css\twitter\responsive.css" />
+    <Content Include="Content\css\unminified\base.css" />
+    <Content Include="Content\css\unminified\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Content\css\unminified\twitter\bootstrap.css" />
+    <Content Include="Content\css\unminified\twitter\responsive.css" />
+    <Content Include="Content\img\404-fry.png" />
+    <Content Include="Content\img\ajax-loader.gif" />
+    <Content Include="Content\img\alpha.png" />
+    <Content Include="Content\img\alpha2.png" />
+    <Content Include="Content\img\arrow.png" />
+    <Content Include="Content\img\arrows_down.png" />
+    <Content Include="Content\img\arrows_up.png" />
+    <Content Include="Content\img\body_bg.png" />
+    <Content Include="Content\img\company_pxg.png" />
+    <Content Include="Content\img\datatables\back_disabled.png" />
+    <Content Include="Content\img\datatables\back_enabled.png" />
+    <Content Include="Content\img\datatables\back_enabled_hover.png" />
+    <Content Include="Content\img\datatables\favicon.ico" />
+    <Content Include="Content\img\datatables\forward_disabled.png" />
+    <Content Include="Content\img\datatables\forward_enabled.png" />
+    <Content Include="Content\img\datatables\forward_enabled_hover.png" />
+    <Content Include="Content\img\datatables\sort_asc.png" />
+    <Content Include="Content\img\datatables\sort_asc_disabled.png" />
+    <Content Include="Content\img\datatables\sort_both.png" />
+    <Content Include="Content\img\datatables\sort_desc.png" />
+    <Content Include="Content\img\datatables\sort_desc_disabled.png" />
+    <Content Include="Content\img\general\clock.png" />
+    <Content Include="Content\img\general\clock2.png" />
+    <Content Include="Content\img\general\coffee.png" />
+    <Content Include="Content\img\general\coffee2.png" />
+    <Content Include="Content\img\general\contacts_icon.png" />
+    <Content Include="Content\img\general\flipchart.png" />
+    <Content Include="Content\img\general\flipchart2.png" />
+    <Content Include="Content\img\general\sun.png" />
+    <Content Include="Content\img\general\sun2.png" />
+    <Content Include="Content\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\img\glyphicons-halflings.png" />
+    <Content Include="Content\img\gradient1.png" />
+    <Content Include="Content\img\hue2.png" />
+    <Content Include="Content\img\login-corner-left.png" />
+    <Content Include="Content\img\login-corner.png" />
+    <Content Include="Content\img\login-corner2.png" />
+    <Content Include="Content\img\login_arrow.png" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\maps\m1.png" />
+    <Content Include="Content\img\maps\m2.png" />
+    <Content Include="Content\img\maps\m3.png" />
+    <Content Include="Content\img\menu_icons\alarm-bell.png" />
+    <Content Include="Content\img\menu_icons\all-icons.png" />
+    <Content Include="Content\img\menu_icons\brush.png" />
+    <Content Include="Content\img\menu_icons\calendar.png" />
+    <Content Include="Content\img\menu_icons\cart.png" />
+    <Content Include="Content\img\menu_icons\dashboard.png" />
+    <Content Include="Content\img\menu_icons\docs.png" />
+    <Content Include="Content\img\menu_icons\explorer.png" />
+    <Content Include="Content\img\menu_icons\files.png" />
+    <Content Include="Content\img\menu_icons\folder.png" />
+    <Content Include="Content\img\menu_icons\forms.png" />
+    <Content Include="Content\img\menu_icons\gallery.png" />
+    <Content Include="Content\img\menu_icons\grid.png" />
+    <Content Include="Content\img\menu_icons\home.png" />
+    <Content Include="Content\img\menu_icons\maps.png" />
+    <Content Include="Content\img\menu_icons\others.png" />
+    <Content Include="Content\img\menu_icons\profile.png" />
+    <Content Include="Content\img\menu_icons\settings.png" />
+    <Content Include="Content\img\menu_icons\statistics.png" />
+    <Content Include="Content\img\menu_icons\tables.png" />
+    <Content Include="Content\img\menu_icons\tools.png" />
+    <Content Include="Content\img\menu_icons\trash.png" />
+    <Content Include="Content\img\menu_icons\users.png" />
+    <Content Include="Content\img\menu_icons\widgets.png" />
+    <Content Include="Content\img\menu_top\all-icons.png" />
+    <Content Include="Content\img\menu_top\clock.png" />
+    <Content Include="Content\img\menu_top\connect.png" />
+    <Content Include="Content\img\menu_top\docs.png" />
+    <Content Include="Content\img\menu_top\lab.png" />
+    <Content Include="Content\img\menu_top\mail.png" />
+    <Content Include="Content\img\menu_top\notifications.png" />
+    <Content Include="Content\img\menu_top\pig.png" />
+    <Content Include="Content\img\menu_top\profile-avatar.png" />
+    <Content Include="Content\img\menu_top\profile-messages.png" />
+    <Content Include="Content\img\menu_top\rss.png" />
+    <Content Include="Content\img\menu_top\search.png" />
+    <Content Include="Content\img\menu_top\settings.png" />
+    <Content Include="Content\img\message_avatar1.png" />
+    <Content Include="Content\img\message_avatar2.png" />
+    <Content Include="Content\img\message_avatar3.png" />
+    <Content Include="Content\img\message_avatar4.png" />
+    <Content Include="Content\img\message_avatar5.png" />
+    <Content Include="Content\img\message_avatar6.png" />
+    <Content Include="Content\img\message_avatar7.png" />
+    <Content Include="Content\img\paint_bucket.png" />
+    <Content Include="Content\img\patterns\bg_dark.png" />
+    <Content Include="Content\img\patterns\bg_dark2.png" />
+    <Content Include="Content\img\patterns\bg_dark3.png" />
+    <Content Include="Content\img\patterns\bg_dark4.png" />
+    <Content Include="Content\img\patterns\classy_fabric.png" />
+    <Content Include="Content\img\patterns\crisp_paper_ruffles.png" />
+    <Content Include="Content\img\patterns\furley_bg.png" />
+    <Content Include="Content\img\patterns\grid.png" />
+    <Content Include="Content\img\patterns\grid2.png" />
+    <Content Include="Content\img\patterns\rough_diagonal.png" />
+    <Content Include="Content\img\patterns\subtle_surface.png" />
+    <Content Include="Content\img\patterns\whitey.png" />
+    <Content Include="Content\img\sample_avatar_big.jpg" />
+    <Content Include="Content\img\saturation2.png" />
+    <Content Include="Content\img\shadows\b10.png" />
+    <Content Include="Content\img\shadows\b15.png" />
+    <Content Include="Content\img\shadows\b30.png" />
+    <Content Include="Content\img\shadows\b50.png" />
+    <Content Include="Content\img\shadows\b85-icons.png" />
+    <Content Include="Content\img\shadows\b85.png" />
+    <Content Include="Content\img\shadows\b90.png" />
+    <Content Include="Content\img\shadows\w20.png" />
+    <Content Include="Content\img\shadows\w30.png" />
+    <Content Include="Content\img\shadows\w50.png" />
+    <Content Include="Content\img\thumbnail_george.jpg" />
+    <Content Include="Content\img\thumbnail_george2.jpg" />
+    <Content Include="Content\img\toggle.png" />
+    <Content Include="Content\js\bootstrap-affix.js" />
+    <Content Include="Content\js\bootstrap-alert.js" />
+    <Content Include="Content\js\bootstrap-button.js" />
+    <Content Include="Content\js\bootstrap-carousel.js" />
+    <Content Include="Content\js\bootstrap-collapse.js" />
+    <Content Include="Content\js\bootstrap-dropdown.js" />
+    <Content Include="Content\js\bootstrap-modal.js" />
+    <Content Include="Content\js\bootstrap-popover.js" />
+    <Content Include="Content\js\bootstrap-scrollspy.js" />
+    <Content Include="Content\js\bootstrap-tab.js" />
+    <Content Include="Content\js\bootstrap-tooltip.js" />
+    <Content Include="Content\js\bootstrap-transition.js" />
+    <Content Include="Content\js\bootstrap-typeahead.js" />
+    <Content Include="Content\js\fileinput.jquery.js" />
+    <Content Include="Content\js\jnavigate.jquery.min.js" />
+    <Content Include="Content\js\jquery-ui-1.8.23.custom.min-old.js" />
+    <Content Include="Content\js\jquery-ui-1.8.23.custom.min.js" />
+    <Content Include="Content\js\jquery.js" />
+    <Content Include="Content\js\jquery.touchdown.js" />
+    <Content Include="Content\js\jquery.touchdown.min.js" />
+    <Content Include="Content\js\jquery.touchSwipe.min.js" />
+    <Content Include="Content\js\plugins\avgrund.js" />
+    <Content Include="Content\js\plugins\bootstrap-colorpicker.js" />
+    <Content Include="Content\js\plugins\bootstrap-datepicker.js" />
+    <Content Include="Content\js\plugins\bootstrap-wysihtml5.js" />
+    <Content Include="Content\js\plugins\character-limit.js" />
+    <Content Include="Content\js\plugins\chosen\chosen\chosen-sprite.png" />
+    <Content Include="Content\js\plugins\chosen\chosen\chosen.css" />
+    <Content Include="Content\js\plugins\chosen\chosen\chosen.jquery.js" />
+    <Content Include="Content\js\plugins\chosen\chosen\chosen.jquery.min.js" />
+    <Content Include="Content\js\plugins\chosen\chosen\chosen.proto.js" />
+    <Content Include="Content\js\plugins\chosen\chosen\chosen.proto.min.js" />
+    <Content Include="Content\js\plugins\chosen\example.jquery.html" />
+    <Content Include="Content\js\plugins\chosen\example.proto.html" />
+    <Content Include="Content\js\plugins\datatables\css\demo_page.css" />
+    <Content Include="Content\js\plugins\datatables\css\demo_table.css" />
+    <Content Include="Content\js\plugins\datatables\css\demo_table_jui.css" />
+    <Content Include="Content\js\plugins\datatables\css\jquery.dataTables.css" />
+    <Content Include="Content\js\plugins\datatables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\js\plugins\datatables\images\back_disabled.png" />
+    <Content Include="Content\js\plugins\datatables\images\back_enabled.png" />
+    <Content Include="Content\js\plugins\datatables\images\back_enabled_hover.png" />
+    <Content Include="Content\js\plugins\datatables\images\favicon.ico" />
+    <Content Include="Content\js\plugins\datatables\images\forward_disabled.png" />
+    <Content Include="Content\js\plugins\datatables\images\forward_enabled.png" />
+    <Content Include="Content\js\plugins\datatables\images\forward_enabled_hover.png" />
+    <Content Include="Content\js\plugins\datatables\images\sort_asc.png" />
+    <Content Include="Content\js\plugins\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Content\js\plugins\datatables\images\sort_both.png" />
+    <Content Include="Content\js\plugins\datatables\images\sort_desc.png" />
+    <Content Include="Content\js\plugins\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Content\js\plugins\datatables\js\datatables_bootstrap.js" />
+    <Content Include="Content\js\plugins\datatables\js\jquery.dataTables.js" />
+    <Content Include="Content\js\plugins\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Content\js\plugins\datatables\js\jquery.js" />
+    <Content Include="Content\js\plugins\datatables\src\api\api.internal.js" />
+    <Content Include="Content\js\plugins\datatables\src\api\api.methods.js" />
+    <Content Include="Content\js\plugins\datatables\src\api\api.static.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.ajax.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.columns.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.constructor.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.data.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.draw.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.filter.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.info.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.init.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.length.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.page.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.processing.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.scrolling.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.sizing.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.sort.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.state.js" />
+    <Content Include="Content\js\plugins\datatables\src\core\core.support.js" />
+    <Content Include="Content\js\plugins\datatables\src\DataTables.js" />
+    <Content Include="Content\js\plugins\datatables\src\ext\ext.classes.js" />
+    <Content Include="Content\js\plugins\datatables\src\ext\ext.paging.js" />
+    <Content Include="Content\js\plugins\datatables\src\ext\ext.sorting.js" />
+    <Content Include="Content\js\plugins\datatables\src\ext\ext.types.js" />
+    <Content Include="Content\js\plugins\datatables\src\model\model.column.js" />
+    <Content Include="Content\js\plugins\datatables\src\model\model.defaults.columns.js" />
+    <Content Include="Content\js\plugins\datatables\src\model\model.defaults.js" />
+    <Content Include="Content\js\plugins\datatables\src\model\model.ext.js" />
+    <Content Include="Content\js\plugins\datatables\src\model\model.row.js" />
+    <Content Include="Content\js\plugins\datatables\src\model\model.search.js" />
+    <Content Include="Content\js\plugins\datatables\src\model\model.settings.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\controller.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\index.html" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\performance\draw.html" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\performance\page.html" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\performance\sort.html" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests\1_dom\_zero_config.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\-complex_header.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\-iDraw.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2512.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2530-2.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2530.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2569.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2600.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2608.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2635.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2746-stable-sort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2799.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2840-restore-table-width.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\2914-state-save-sort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\5396-fnUpdate-arrays-mData.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\5396-fnUpdate-arrays.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\5508-xscroll-zero-content.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\6776-scrolling-table-grows.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aaSorting.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aaSortingFixed.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bSearchable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bSortable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bUseRendered.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bVisible.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.bVisible2.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.fnRender.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.iDataSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sClass.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sName.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sTitle.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoColumns.sWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\aoSearchCols.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\asStripClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bAutoWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bFilter.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bInfiniteScroll.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bJQueryUI.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bLengthChange.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bServerSide.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bSortCellsTop.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\bSortClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnCookieCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnCreatedCell.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnCreatedRow.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnDeleteRow.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnDrawCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnFilter.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnFooterCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnHeaderCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnInfoCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnInitComplete.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnRowCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnSetColumnVis.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\fnSetColumnVis2.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\html-autodetect-sort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\iDisplayLength.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.oPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfoEmpty.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sInfoPostFix.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sLengthMenu.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sUrl.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oLanguage.sZeroRecords.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\oSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\sAjaxSource.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\sDom.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\sPaginationType.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\sScrollXY.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\th_in_body.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\_getDataFunctions.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\_setDataFunctions.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\1_dom\_zero_config.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\39-nested-null.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\6872-default-content-missing-props.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\8549--string-sorting-nonstrings.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aaSorting.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aaSortingFixed.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.bSearchable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.bSortable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.bUseRendered.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.bVisible.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.fnRender.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.iDataSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.sClass.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.sName.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.sTitle.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoColumns.sWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\aoSearchCols.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\asStripClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bAutoWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bFilter.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bLengthChange.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bServerSide.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\bSortClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\fnCreatedCell.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\fnCreatedRow.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\fnDrawCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\fnFooterCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\fnHeaderCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\fnInitComplete.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\fnRowCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\iDisplayLength.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\js_data_mixed_types.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.oPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfoEmpty.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.sInfoPostFix.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.sLengthMenu.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.sProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.sSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.sUrl.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oLanguage.sZeroRecords.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\oSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\sAjaxSource.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\sDom.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\sPaginationType.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\2_js\_zero_config.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aaSorting.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aaSortingFixed.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bSearchable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bSortable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bUseRendered.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.bVisible.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.fnRender.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.iDataSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sClass.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sName.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sTitle.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoColumns.sWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\aoSearchCols.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\asStripClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bAutoWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bFilter.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bLengthChange.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bServerSide.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\bSortClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\fnCreatedCell.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\fnCreatedRow.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\fnDrawCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\fnHeaderCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\fnInitComplete.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\fnRowCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\fnServerData.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\iDisplayLength.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.oPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfoEmpty.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sInfoPostFix.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sLengthMenu.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sLoadingRecords.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sUrl.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oLanguage.sZeroRecords.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\oSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\sAjaxDataProp.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\sAjaxDataProp2.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\sAjaxSource.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\sDom.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\sPaginationType.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\3_ajax\_zero_config.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\-iDraw.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\2440.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\2569.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\2600.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aaSorting.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aaSortingFixed.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bSearchable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bSortable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bUseRendered.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.bVisible.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.fnRender.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sClass.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sName.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sTitle.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoColumns.sWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\aoSearchCols.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\asStripClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bAutoWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bFilter.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bInfiniteScroll.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bLengthChange.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bServerSide.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\bSortClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\fnCreatedCell.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\fnCreatedRow.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\fnDrawCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\fnHeaderCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\fnInitComplete.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\fnRowCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\iDeferLoading.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\iDisplayLength.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.oPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfoEmpty.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sInfoPostFix.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sLengthMenu.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sUrl.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oLanguage.sZeroRecords.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\oSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\sAjaxDataProp.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\sAjaxSource.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\sDom.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\sPaginationType.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\4_server-side\_zero_config.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aaSorting.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aaSortingFixed.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bSearchable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bSortable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bUseRendered.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.bVisible.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.fnRender.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.iDataSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sClass.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sName.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sTitle.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoColumns.sWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\aoSearchCols.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\asStripClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bAutoWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bFilter.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bLengthChange.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bServerSide.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\bSortClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\fnDrawCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\fnHeaderCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\fnInitComplete.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\fnRowCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\fnServerData.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\iDisplayLength.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.oPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfoEmpty.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sInfoPostFix.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sLengthMenu.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sUrl.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oLanguage.sZeroRecords.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\oSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\sAjaxSource.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\sDom.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\sPaginationType.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_arrays_subobjects.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_deep.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_mDataProp.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_null_source.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_objects.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\5_ajax_objects\_zero_config_objects_subarrays.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aaSorting.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aaSortingFixed.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bSearchable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bSortable.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bUseRendered.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.bVisible.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.fnRender.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.iDataSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sClass.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sName.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sTitle.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoColumns.sWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\aoSearchCols.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\asStripClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bAutoWidth.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bFilter.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bLengthChange.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bServerSide.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bSort.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\bSortClasses.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnDrawCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnHeaderCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnInitComplete.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnRowCallback.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\fnServerData.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\iDisplayLength.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.oPaginate.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfo.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfoEmpty.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sInfoPostFix.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sLengthMenu.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sProcessing.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sUrl.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oLanguage.sZeroRecords.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\oSearch.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxDataProp.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxDataProp2.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\sAjaxSource.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\sDom.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\sPaginationType.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\tests_onhold\6_delayed_rendering\_zero_config.js" />
+    <Content Include="Content\js\plugins\datatables\unit_testing\unit_test.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\css\elfinder.min.css" />
+    <Content Include="Content\js\plugins\elfinder2.0\css\theme.css" />
+    <Content Include="Content\js\plugins\elfinder2.0\elfinder.html" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\arrows-active.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\arrows-normal.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\crop.gif" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\dialogs.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\icons-big.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\icons-small.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\logo.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\progress.gif" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\quicklook-bg.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\quicklook-icons.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\resize.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\spinner-mini.gif" />
+    <Content Include="Content\js\plugins\elfinder2.0\img\toolbar.png" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\elfinder.min.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.ar.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.bg.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.ca.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.cs.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.de.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.es.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.fr.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.hu.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.jp.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.LANG.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.nl.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.no.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.pl.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.pt_BR.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.ru.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\i18n\elfinder.zh_CN.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\js\proxy\elFinderSupportVer1.js" />
+    <Content Include="Content\js\plugins\elfinder2.0\php\MySQLStorage.sql" />
+    <Content Include="Content\js\plugins\enquire.min.js" />
+    <Content Include="Content\js\plugins\excanvas.compiled.js" />
+    <Content Include="Content\js\plugins\flot\API.txt" />
+    <Content Include="Content\js\plugins\flot\examples\ajax.html" />
+    <Content Include="Content\js\plugins\flot\examples\annotating.html" />
+    <Content Include="Content\js\plugins\flot\examples\arrow-down.gif" />
+    <Content Include="Content\js\plugins\flot\examples\arrow-left.gif" />
+    <Content Include="Content\js\plugins\flot\examples\arrow-right.gif" />
+    <Content Include="Content\js\plugins\flot\examples\arrow-up.gif" />
+    <Content Include="Content\js\plugins\flot\examples\basic.html" />
+    <Content Include="Content\js\plugins\flot\examples\graph-types.html" />
+    <Content Include="Content\js\plugins\flot\examples\hs-2004-27-a-large_web.jpg" />
+    <Content Include="Content\js\plugins\flot\examples\image.html" />
+    <Content Include="Content\js\plugins\flot\examples\index.html" />
+    <Content Include="Content\js\plugins\flot\examples\interacting-axes.html" />
+    <Content Include="Content\js\plugins\flot\examples\interacting.html" />
+    <Content Include="Content\js\plugins\flot\examples\layout.css" />
+    <Content Include="Content\js\plugins\flot\examples\multiple-axes.html" />
+    <Content Include="Content\js\plugins\flot\examples\navigate.html" />
+    <Content Include="Content\js\plugins\flot\examples\percentiles.html" />
+    <Content Include="Content\js\plugins\flot\examples\pie.html" />
+    <Content Include="Content\js\plugins\flot\examples\realtime.html" />
+    <Content Include="Content\js\plugins\flot\examples\resize.html" />
+    <Content Include="Content\js\plugins\flot\examples\selection.html" />
+    <Content Include="Content\js\plugins\flot\examples\setting-options.html" />
+    <Content Include="Content\js\plugins\flot\examples\stacking.html" />
+    <Content Include="Content\js\plugins\flot\examples\symbols.html" />
+    <Content Include="Content\js\plugins\flot\examples\thresholding.html" />
+    <Content Include="Content\js\plugins\flot\examples\time.html" />
+    <Content Include="Content\js\plugins\flot\examples\tracking.html" />
+    <Content Include="Content\js\plugins\flot\examples\turning-series.html" />
+    <Content Include="Content\js\plugins\flot\examples\visitors.html" />
+    <Content Include="Content\js\plugins\flot\examples\zooming.html" />
+    <Content Include="Content\js\plugins\flot\excanvas.js" />
+    <Content Include="Content\js\plugins\flot\excanvas.min.js" />
+    <Content Include="Content\js\plugins\flot\FAQ.txt" />
+    <Content Include="Content\js\plugins\flot\jquery.colorhelpers.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.crosshair.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.fillbetween.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.image.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.navigate.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.selection.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.spider.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.stack.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.symbol.js" />
+    <Content Include="Content\js\plugins\flot\jquery.flot.threshold.js" />
+    <Content Include="Content\js\plugins\flot\jquery.js" />
+    <Content Include="Content\js\plugins\flot\LICENSE.txt" />
+    <Content Include="Content\js\plugins\flot\NEWS.txt" />
+    <Content Include="Content\js\plugins\flot\PLUGINS.txt" />
+    <Content Include="Content\js\plugins\flot\README.txt" />
+    <Content Include="Content\js\plugins\full-calendar\fullcalendar.css" />
+    <Content Include="Content\js\plugins\full-calendar\fullcalendar.js" />
+    <Content Include="Content\js\plugins\full-calendar\fullcalendar.min.js" />
+    <Content Include="Content\js\plugins\full-calendar\fullcalendar.print.css" />
+    <Content Include="Content\js\plugins\full-calendar\gcal.js" />
+    <Content Include="Content\js\plugins\gmap3\gmap3.min.js" />
+    <Content Include="Content\js\plugins\gritter\css\jquery.gritter.css" />
+    <Content Include="Content\js\plugins\gritter\images\gritter-light.png" />
+    <Content Include="Content\js\plugins\gritter\images\gritter-long.png" />
+    <Content Include="Content\js\plugins\gritter\images\gritter.png" />
+    <Content Include="Content\js\plugins\gritter\images\ie-spacer.gif" />
+    <Content Include="Content\js\plugins\gritter\images\trees.jpg" />
+    <Content Include="Content\js\plugins\gritter\index.html" />
+    <Content Include="Content\js\plugins\gritter\jquery.gritter.min.js" />
+    <Content Include="Content\js\plugins\gritter\js\jquery.gritter.js" />
+    <Content Include="Content\js\plugins\gritter\js\jquery.gritter.min.js" />
+    <Content Include="Content\js\plugins\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="Content\js\plugins\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="Content\js\plugins\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="Content\js\plugins\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="Content\js\plugins\highcharts\highcharts-more.js" />
+    <Content Include="Content\js\plugins\highcharts\highcharts.js" />
+    <Content Include="Content\js\plugins\highcharts\highcharts.src.js" />
+    <Content Include="Content\js\plugins\highcharts\modules\canvas-tools.js" />
+    <Content Include="Content\js\plugins\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="Content\js\plugins\highcharts\modules\data.js" />
+    <Content Include="Content\js\plugins\highcharts\modules\data.src.js" />
+    <Content Include="Content\js\plugins\highcharts\modules\exporting.js" />
+    <Content Include="Content\js\plugins\highcharts\modules\exporting.src.js" />
+    <Content Include="Content\js\plugins\highcharts\themes\dark-blue.js" />
+    <Content Include="Content\js\plugins\highcharts\themes\dark-green.js" />
+    <Content Include="Content\js\plugins\highcharts\themes\gray.js" />
+    <Content Include="Content\js\plugins\highcharts\themes\grid.js" />
+    <Content Include="Content\js\plugins\highcharts\themes\skies.js" />
+    <Content Include="Content\js\plugins\jquery.bookblock.js" />
+    <Content Include="Content\js\plugins\jquery.maskedinput-1.3.js" />
+    <Content Include="Content\js\plugins\jquery.peity.min.js" />
+    <Content Include="Content\js\plugins\jquery.sparkline.min.js" />
+    <Content Include="Content\js\plugins\jquery.tinyscrollbar.min.js" />
+    <Content Include="Content\js\plugins\jquery.uniform.min.js" />
+    <Content Include="Content\js\plugins\jquerypp.custom.js" />
+    <Content Include="Content\js\plugins\justGage.1.0.1\auto-adjust.htm" />
+    <Content Include="Content\js\plugins\justGage.1.0.1\custom-interval.htm" />
+    <Content Include="Content\js\plugins\justGage.1.0.1\customize-style.htm" />
+    <Content Include="Content\js\plugins\justGage.1.0.1\resources\js\justgage.1.0.1.js" />
+    <Content Include="Content\js\plugins\justGage.1.0.1\resources\js\justgage.1.0.1.min.js" />
+    <Content Include="Content\js\plugins\justGage.1.0.1\resources\js\raphael.2.1.0.min.js" />
+    <Content Include="Content\js\plugins\justGage.1.0.1\show-color-by-sector.htm" />
+    <Content Include="Content\js\plugins\knockout-2.0.0.js" />
+    <Content Include="Content\js\plugins\modernizr.custom.32549.js" />
+    <Content Include="Content\js\plugins\modernizr.js" />
+    <Content Include="Content\js\plugins\pie\PIE.htc" />
+    <Content Include="Content\js\plugins\pie\PIE.js" />
+    <Content Include="Content\js\plugins\pie\PIE_uncompressed.htc" />
+    <Content Include="Content\js\plugins\pie\PIE_uncompressed.js" />
+    <Content Include="Content\js\plugins\responsive-tables.js" />
+    <Content Include="Content\js\plugins\textarea-autogrow.js" />
+    <Content Include="Content\js\plugins\tinymce\changelog.txt" />
+    <Content Include="Content\js\plugins\tinymce\examples\accessibility.html" />
+    <Content Include="Content\js\plugins\tinymce\examples\css\content.css" />
+    <Content Include="Content\js\plugins\tinymce\examples\css\word.css" />
+    <Content Include="Content\js\plugins\tinymce\examples\custom_formats.html" />
+    <Content Include="Content\js\plugins\tinymce\examples\full.html" />
+    <Content Include="Content\js\plugins\tinymce\examples\index.html" />
+    <Content Include="Content\js\plugins\tinymce\examples\lists\image_list.js" />
+    <Content Include="Content\js\plugins\tinymce\examples\lists\link_list.js" />
+    <Content Include="Content\js\plugins\tinymce\examples\lists\media_list.js" />
+    <Content Include="Content\js\plugins\tinymce\examples\lists\template_list.js" />
+    <Content Include="Content\js\plugins\tinymce\examples\media\logo.jpg" />
+    <Content Include="Content\js\plugins\tinymce\examples\media\logo_over.jpg" />
+    <Content Include="Content\js\plugins\tinymce\examples\media\sample.avi" />
+    <Content Include="Content\js\plugins\tinymce\examples\media\sample.mov" />
+    <Content Include="Content\js\plugins\tinymce\examples\media\sample.swf" />
+    <Content Include="Content\js\plugins\tinymce\examples\menu.html" />
+    <Content Include="Content\js\plugins\tinymce\examples\simple.html" />
+    <Content Include="Content\js\plugins\tinymce\examples\skins.html" />
+    <Content Include="Content\js\plugins\tinymce\examples\templates\layout1.htm" />
+    <Content Include="Content\js\plugins\tinymce\examples\templates\snippet1.htm" />
+    <Content Include="Content\js\plugins\tinymce\examples\word.html" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\langs\en.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\license.txt" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advhr\css\advhr.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advhr\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advhr\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advhr\js\rule.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advhr\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advhr\rule.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advimage\css\advimage.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advimage\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advimage\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advimage\image.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advimage\img\sample.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advimage\js\image.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advimage\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advlink\css\advlink.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advlink\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advlink\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advlink\js\advlink.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advlink\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advlink\link.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advlist\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\advlist\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\autolink\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\autolink\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\autoresize\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\autoresize\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\autosave\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\autosave\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\autosave\langs\en.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\bbcode\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\bbcode\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\contextmenu\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\contextmenu\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\directionality\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\directionality\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\emotions.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-cool.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-cry.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-embarassed.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-foot-in-mouth.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-frown.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-innocent.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-kiss.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-laughing.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-money-mouth.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-sealed.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-smile.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-surprised.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-tongue-out.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-undecided.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-wink.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\img\smiley-yell.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\js\emotions.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\emotions\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example\dialog.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example\img\example.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example\js\dialog.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example\langs\en.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example_dependency\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\example_dependency\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullpage\css\fullpage.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullpage\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullpage\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullpage\fullpage.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullpage\js\fullpage.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullpage\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullscreen\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullscreen\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\fullscreen\fullscreen.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\iespell\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\iespell\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\alert.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\button.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\buttons.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\confirm.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\corners.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\horizontal.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\img\vertical.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\skins\clearlooks2\window.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\inlinepopups\template.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\insertdatetime\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\insertdatetime\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\layer\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\layer\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\legacyoutput\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\legacyoutput\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\lists\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\lists\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\media\css\media.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\media\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\media\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\media\js\embed.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\media\js\media.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\media\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\media\media.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\media\moxieplayer.swf" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\nonbreaking\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\nonbreaking\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\noneditable\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\noneditable\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\pagebreak\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\pagebreak\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\paste\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\paste\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\paste\js\pastetext.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\paste\js\pasteword.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\paste\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\paste\pastetext.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\paste\pasteword.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\preview\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\preview\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\preview\example.html" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\preview\jscripts\embed.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\preview\preview.html" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\print\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\print\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\save\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\save\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\searchreplace\css\searchreplace.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\searchreplace\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\searchreplace\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\searchreplace\js\searchreplace.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\searchreplace\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\searchreplace\searchreplace.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\spellchecker\css\content.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\spellchecker\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\spellchecker\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\spellchecker\img\wline.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\style\css\props.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\style\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\style\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\style\js\props.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\style\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\style\props.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\style\readme.txt" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\tabfocus\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\tabfocus\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\cell.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\css\cell.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\css\row.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\css\table.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\js\cell.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\js\merge_cells.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\js\row.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\js\table.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\merge_cells.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\row.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\table\table.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\template\blank.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\template\css\template.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\template\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\template\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\template\js\template.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\template\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\template\template.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\visualblocks\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\visualblocks\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\visualchars\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\visualchars\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\wordcount\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\wordcount\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\abbr.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\acronym.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\attributes.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\cite.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\css\attributes.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\css\popup.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\del.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\editor_plugin.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\editor_plugin_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\ins.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\abbr.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\acronym.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\attributes.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\cite.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\del.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\element_common.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\js\ins.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\plugins\xhtmlxtras\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\about.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\anchor.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\charmap.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\color_picker.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\editor_template.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\editor_template_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\image.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\colorpicker.jpg" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\flash.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\icons.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\iframe.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\pagebreak.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\quicktime.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\realmedia.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\shockwave.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\trans.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\video.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\img\windowsmedia.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\js\about.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\js\anchor.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\js\charmap.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\js\color_picker.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\js\image.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\js\link.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\js\source_editor.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\langs\en.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\langs\en_dlg.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\link.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\shortcuts.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\content.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\dialog.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\buttons.png" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\items.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\menu_arrow.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\menu_check.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\progress.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\img\tabs.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\default\ui.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\content.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\dialog.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\highcontrast\ui.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\content.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\dialog.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg.png" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_black.png" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\img\button_bg_silver.png" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui_black.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\skins\o2k7\ui_silver.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\advanced\source_editor.htm" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\editor_template.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\editor_template_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\img\icons.gif" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\langs\en.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\skins\default\content.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\skins\default\ui.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\content.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\img\button_bg.png" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\themes\simple\skins\o2k7\ui.css" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\tiny_mce.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\tiny_mce_popup.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\tiny_mce_src.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\utils\editable_selects.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\utils\form_utils.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\utils\mctabs.js" />
+    <Content Include="Content\js\plugins\tinymce\jscripts\tiny_mce\utils\validate.js" />
+    <Content Include="Content\js\plugins\validation\changelog.txt" />
+    <Content Include="Content\js\plugins\validation\demo\ajaxSubmit-intergration-demo.html" />
+    <Content Include="Content\js\plugins\validation\demo\captcha\captcha.js" />
+    <Content Include="Content\js\plugins\validation\demo\captcha\images\button.png" />
+    <Content Include="Content\js\plugins\validation\demo\captcha\style.css" />
+    <Content Include="Content\js\plugins\validation\demo\css\chili.css" />
+    <Content Include="Content\js\plugins\validation\demo\css\cmxform.css" />
+    <Content Include="Content\js\plugins\validation\demo\css\cmxformTemplate.css" />
+    <Content Include="Content\js\plugins\validation\demo\css\core.css" />
+    <Content Include="Content\js\plugins\validation\demo\css\reset.css" />
+    <Content Include="Content\js\plugins\validation\demo\css\screen.css" />
+    <Content Include="Content\js\plugins\validation\demo\custom-messages-metadata-demo.html" />
+    <Content Include="Content\js\plugins\validation\demo\custom-methods-demo.html" />
+    <Content Include="Content\js\plugins\validation\demo\dynamic-totals.html" />
+    <Content Include="Content\js\plugins\validation\demo\errorcontainer-demo.html" />
+    <Content Include="Content\js\plugins\validation\demo\file_input.html" />
+    <Content Include="Content\js\plugins\validation\demo\images\bg.gif" />
+    <Content Include="Content\js\plugins\validation\demo\images\checked.gif" />
+    <Content Include="Content\js\plugins\validation\demo\images\cmxform-divider.gif" />
+    <Content Include="Content\js\plugins\validation\demo\images\cmxform-fieldset.gif" />
+    <Content Include="Content\js\plugins\validation\demo\images\loading.gif" />
+    <Content Include="Content\js\plugins\validation\demo\images\unchecked.gif" />
+    <Content Include="Content\js\plugins\validation\demo\index.html" />
+    <Content Include="Content\js\plugins\validation\demo\jquerymobile.html" />
+    <Content Include="Content\js\plugins\validation\demo\js\chili-1.7.pack.js" />
+    <Content Include="Content\js\plugins\validation\demo\login\images\bg.gif" />
+    <Content Include="Content\js\plugins\validation\demo\login\images\header1.jpg" />
+    <Content Include="Content\js\plugins\validation\demo\login\images\page.gif" />
+    <Content Include="Content\js\plugins\validation\demo\login\images\required_star.gif" />
+    <Content Include="Content\js\plugins\validation\demo\login\index.html" />
+    <Content Include="Content\js\plugins\validation\demo\login\screen.css" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\ie6.css" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\backRequiredGray.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\back_green-fade.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\back_nav_blue.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\blank.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\button-submit.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\favicon.ico" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\help.png" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\left-nav-callout-long.png" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\login-sprite.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\logo_marketo.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\sf.png" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\step1-24.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\step2-24.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\step3-24.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\tab-sprite.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\tab_green.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\time.png" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\toggle.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\images\warning.gif" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\index.html" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\jquery.maskedinput.js" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\mktSignup.js" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\step2.htm" />
+    <Content Include="Content\js\plugins\validation\demo\marketo\stylesheet.css" />
+    <Content Include="Content\js\plugins\validation\demo\milk\bg.gif" />
+    <Content Include="Content\js\plugins\validation\demo\milk\index.html" />
+    <Content Include="Content\js\plugins\validation\demo\milk\left_white.png" />
+    <Content Include="Content\js\plugins\validation\demo\milk\milk.css" />
+    <Content Include="Content\js\plugins\validation\demo\milk\milk.png" />
+    <Content Include="Content\js\plugins\validation\demo\milk\right_white.png" />
+    <Content Include="Content\js\plugins\validation\demo\multipart\index.html" />
+    <Content Include="Content\js\plugins\validation\demo\multipart\js\jquery.maskedinput-1.0.js" />
+    <Content Include="Content\js\plugins\validation\demo\multipart\js\ui.accordion.js" />
+    <Content Include="Content\js\plugins\validation\demo\multipart\js\ui.core.js" />
+    <Content Include="Content\js\plugins\validation\demo\multipart\style.css" />
+    <Content Include="Content\js\plugins\validation\demo\radio-checkbox-select-demo.html" />
+    <Content Include="Content\js\plugins\validation\demo\tabs\index.html" />
+    <Content Include="Content\js\plugins\validation\demo\themerollered.html" />
+    <Content Include="Content\js\plugins\validation\demo\tinymce\index.html" />
+    <Content Include="Content\js\plugins\validation\demo\tinymce\themes\simple\editor_template.js" />
+    <Content Include="Content\js\plugins\validation\demo\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="Content\js\plugins\validation\demo\tinymce\themes\simple\langs\en.js" />
+    <Content Include="Content\js\plugins\validation\demo\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="Content\js\plugins\validation\demo\tinymce\tiny_mce.js" />
+    <Content Include="Content\js\plugins\validation\dist\additional-methods.js" />
+    <Content Include="Content\js\plugins\validation\dist\additional-methods.min.js" />
+    <Content Include="Content\js\plugins\validation\dist\jquery.validate.js" />
+    <Content Include="Content\js\plugins\validation\dist\jquery.validate.min.js" />
+    <Content Include="Content\js\plugins\validation\grunt.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery-1.3.2.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery-1.4.2.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery-1.4.4.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery-1.5.2.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery-1.6.1.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery-1.7.2.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery.form.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery.metadata.js" />
+    <Content Include="Content\js\plugins\validation\lib\jquery.mockjax.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_ar.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_bg.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_ca.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_cs.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_da.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_de.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_el.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_es.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_et.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_eu.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_fa.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_fi.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_fr.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_he.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_hr.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_hu.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_it.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_ja.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_ka.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_kk.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_lt.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_lv.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_nl.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_no.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_pl.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_pt_BR.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_pt_PT.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_ro.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_ru.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_si.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_sk.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_sl.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_sr.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_sv.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_th.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_tr.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_uk.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_vi.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_zh.js" />
+    <Content Include="Content\js\plugins\validation\localization\messages_zh_TW.js" />
+    <Content Include="Content\js\plugins\validation\localization\methods_de.js" />
+    <Content Include="Content\js\plugins\validation\localization\methods_nl.js" />
+    <Content Include="Content\js\plugins\validation\localization\methods_pt.js" />
+    <Content Include="Content\js\plugins\validation\test\events.html" />
+    <Content Include="Content\js\plugins\validation\test\firebug\errorIcon.png" />
+    <Content Include="Content\js\plugins\validation\test\firebug\firebug.css" />
+    <Content Include="Content\js\plugins\validation\test\firebug\firebug.html" />
+    <Content Include="Content\js\plugins\validation\test\firebug\firebug.js" />
+    <Content Include="Content\js\plugins\validation\test\firebug\firebugx.js" />
+    <Content Include="Content\js\plugins\validation\test\firebug\infoIcon.png" />
+    <Content Include="Content\js\plugins\validation\test\firebug\warningIcon.png" />
+    <Content Include="Content\js\plugins\validation\test\index.html" />
+    <Content Include="Content\js\plugins\validation\test\jquery.js" />
+    <Content Include="Content\js\plugins\validation\test\large.html" />
+    <Content Include="Content\js\plugins\validation\test\messages.js" />
+    <Content Include="Content\js\plugins\validation\test\methods.js" />
+    <Content Include="Content\js\plugins\validation\test\qunit\qunit.css" />
+    <Content Include="Content\js\plugins\validation\test\qunit\qunit.js" />
+    <Content Include="Content\js\plugins\validation\test\rules.js" />
+    <Content Include="Content\js\plugins\validation\test\selects\index.html" />
+    <Content Include="Content\js\plugins\validation\test\tabs.html" />
+    <Content Include="Content\js\plugins\validation\test\test.js" />
+    <Content Include="Content\js\plugins\wizard-master\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\js\plugins\wizard-master\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\js\plugins\wizard-master\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\js\plugins\wizard-master\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\js\plugins\wizard-master\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\js\plugins\wizard-master\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\js\plugins\wizard-master\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\js\plugins\wizard-master\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-custombuttons.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-custombuttonsfirstlast.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-disabletabclick.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-finishbutton.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-formvalidation.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-inverse.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-pills.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-progressbar.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic-tabsleft.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\basic.html" />
+    <Content Include="Content\js\plugins\wizard-master\examples\multiple.html" />
+    <Content Include="Content\js\plugins\wizard-master\index.html" />
+    <Content Include="Content\js\plugins\wizard-master\jquery.bootstrap.wizard.js" />
+    <Content Include="Content\js\plugins\wizard-master\prettify.css" />
+    <Content Include="Content\js\plugins\wizard-master\prettify.js" />
+    <Content Include="Content\js\plugins\wysihtml5-0.3.0.min.js" />
+    <Content Include="Content\js\plugins\wysihtml5\dist\bootstrap-wysihtml5-0.0.2.css" />
+    <Content Include="Content\js\plugins\wysihtml5\dist\bootstrap-wysihtml5-0.0.2.js" />
+    <Content Include="Content\js\plugins\wysihtml5\dist\bootstrap-wysihtml5-0.0.2.min.js" />
+    <Content Include="Content\js\plugins\wysihtml5\index.html" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\css\bootstrap-responsive.css" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\css\bootstrap.css" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\css\bootstrap.min.css" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\css\prettify.css" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\css\wysiwyg-color.css" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\img\glyphicons-halflings.png" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\js\bootstrap-button.js" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\js\bootstrap.js" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\js\bootstrap.min.js" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\js\jquery-1.7.2.min.js" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\js\prettify.js" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\js\wysihtml5-0.3.0.js" />
+    <Content Include="Content\js\plugins\wysihtml5\lib\js\wysihtml5-0.3.0.min.js" />
+    <Content Include="Content\js\plugins\wysihtml5\src\bootstrap-wysihtml5.css" />
+    <Content Include="Content\js\plugins\wysihtml5\src\bootstrap-wysihtml5.js" />
+    <Content Include="Content\js\plugins\wysihtml5\src\locales\bootstrap-wysihtml5.de-DE.js" />
+    <Content Include="Content\js\plugins\wysihtml5\src\locales\bootstrap-wysihtml5.es-ES.js" />
+    <Content Include="Content\js\plugins\wysihtml5\src\locales\bootstrap-wysihtml5.fr-FR.js" />
+    <Content Include="Content\js\plugins\wysihtml5\src\locales\bootstrap-wysihtml5.fr-NL.js" />
+    <Content Include="Content\js\plugins\wysihtml5\src\locales\bootstrap-wysihtml5.pt-BR.js" />
+    <Content Include="Content\js\plugins\wysihtml5\test\bootstrap_wysihtml5\parserRules_test.js" />
+    <Content Include="Content\js\plugins\wysihtml5\test\browser_test.js" />
+    <Content Include="Content\js\plugins\wysihtml5\test\editor_test.js" />
+    <Content Include="Content\js\plugins\wysihtml5\test\incompatible_test.js" />
+    <Content Include="Content\js\plugins\wysihtml5\test\index.html" />
+    <Content Include="Content\js\plugins\wysihtml5\test\support\html_equal.js" />
+    <Content Include="Content\js\plugins\wysihtml5\test\undo_manager_test.js" />
+    <Content Include="Content\js\scripts - Copy.js" />
+    <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\sass\font\entypo.svg" />
+    <Content Include="Content\sass\font\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="hibernate.cfg.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\js\plugins\elfinder2.0\files\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\css\.DS_Store" />
+    <None Include="Content\css\fonts\fontawesome-webfont.eot" />
+    <None Include="Content\css\fonts\fontawesome-webfont.ttf" />
+    <None Include="Content\css\fonts\fontawesome-webfont.woff" />
+    <None Include="Content\css\images\.DS_Store" />
+    <None Include="Content\img\datatables\Sorting icons.psd" />
+    <None Include="Content\img\general\boxes_iconsr_styles.psd" />
+    <None Include="Content\js\.jshintrc" />
+    <None Include="Content\js\plugins\chosen\coffee\chosen.jquery.coffee" />
+    <None Include="Content\js\plugins\chosen\coffee\chosen.proto.coffee" />
+    <None Include="Content\js\plugins\chosen\coffee\lib\abstract-chosen.coffee" />
+    <None Include="Content\js\plugins\chosen\coffee\lib\select-parser.coffee" />
+    <None Include="Content\js\plugins\datatables\images\Sorting icons.psd" />
+    <None Include="Content\js\plugins\datatables\unit_testing\controller.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\performance\large.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\-complex_header.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\2512.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\6776.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\complex_header_2.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\deferred_table.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\dom_data.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\dom_data_th.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\dom_data_two_headers.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\dymanic_table.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\empty_table.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\html_table.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\js_data.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\js_data_mixed_types.php" />
+    <None Include="Content\js\plugins\datatables\unit_testing\templates\two_tables.php" />
+    <None Include="Content\js\plugins\elfinder2.0\Changelog" />
+    <None Include="Content\js\plugins\elfinder2.0\php\connector.minimal.php" />
+    <None Include="Content\js\plugins\elfinder2.0\php\connector.php" />
+    <None Include="Content\js\plugins\elfinder2.0\php\elFinder.class.php" />
+    <None Include="Content\js\plugins\elfinder2.0\php\elFinderConnector.class.php" />
+    <None Include="Content\js\plugins\elfinder2.0\php\elFinderVolumeDriver.class.php" />
+    <None Include="Content\js\plugins\elfinder2.0\php\elFinderVolumeLocalFileSystem.class.php" />
+    <None Include="Content\js\plugins\elfinder2.0\php\elFinderVolumeMySQL.class.php" />
+    <None Include="Content\js\plugins\elfinder2.0\php\mime.types" />
+    <None Include="Content\js\plugins\elfinder2.0\README.md" />
+    <None Include="Content\js\plugins\flot\examples\data-eu-gdp-growth-1.json" />
+    <None Include="Content\js\plugins\flot\examples\data-eu-gdp-growth-2.json" />
+    <None Include="Content\js\plugins\flot\examples\data-eu-gdp-growth-3.json" />
+    <None Include="Content\js\plugins\flot\examples\data-eu-gdp-growth-4.json" />
+    <None Include="Content\js\plugins\flot\examples\data-eu-gdp-growth-5.json" />
+    <None Include="Content\js\plugins\flot\examples\data-eu-gdp-growth.json" />
+    <None Include="Content\js\plugins\flot\examples\data-japan-gdp-growth.json" />
+    <None Include="Content\js\plugins\flot\examples\data-usa-gdp-growth.json" />
+    <None Include="Content\js\plugins\flot\Makefile" />
+    <None Include="Content\js\plugins\gritter\README.markdown" />
+    <None Include="Content\js\plugins\pie\PIE.php" />
+    <None Include="Content\js\plugins\tinymce\examples\media\sample.dcr" />
+    <None Include="Content\js\plugins\tinymce\examples\media\sample.flv" />
+    <None Include="Content\js\plugins\tinymce\examples\media\sample.ram" />
+    <None Include="Content\js\plugins\tinymce\examples\media\sample.rm" />
+    <None Include="Content\js\plugins\validation\demo\captcha\fonts\Anorexia.ttf" />
+    <None Include="Content\js\plugins\validation\demo\captcha\images\image.php" />
+    <None Include="Content\js\plugins\validation\demo\captcha\image_req.php" />
+    <None Include="Content\js\plugins\validation\demo\captcha\index.php" />
+    <None Include="Content\js\plugins\validation\demo\captcha\newsession.php" />
+    <None Include="Content\js\plugins\validation\demo\captcha\process.php" />
+    <None Include="Content\js\plugins\validation\demo\captcha\rand.php" />
+    <None Include="Content\js\plugins\validation\demo\form.php" />
+    <None Include="Content\js\plugins\validation\demo\form.phps" />
+    <None Include="Content\js\plugins\validation\demo\marketo\emails.php" />
+    <None Include="Content\js\plugins\validation\demo\marketo\emails.phps" />
+    <None Include="Content\js\plugins\validation\demo\milk\emails.php" />
+    <None Include="Content\js\plugins\validation\demo\milk\emails.phps" />
+    <None Include="Content\js\plugins\validation\demo\milk\users.php" />
+    <None Include="Content\js\plugins\validation\demo\milk\users.phps" />
+    <None Include="Content\js\plugins\validation\package.json" />
+    <None Include="Content\js\plugins\validation\README.md" />
+    <None Include="Content\js\plugins\wizard-master\README.md" />
+    <None Include="Content\js\plugins\wysihtml5\.gitignore" />
+    <None Include="Content\js\plugins\wysihtml5\Gemfile" />
+    <None Include="Content\js\plugins\wysihtml5\Gemfile.lock" />
+    <None Include="Content\js\plugins\wysihtml5\LICENCE" />
+    <None Include="Content\js\plugins\wysihtml5\Rakefile" />
+    <None Include="Content\js\plugins\wysihtml5\readme.textile" />
+    <None Include="Content\js\plugins\wysihtml5\test\lib" />
+    <None Include="Content\js\plugins\wysihtml5\test\README" />
+    <None Include="Content\js\plugins\wysihtml5\VERSION" />
+    <None Include="Content\sass\font\.DS_Store" />
+    <None Include="Content\sass\font\entypo.eot" />
+    <None Include="Content\sass\font\entypo.ttf" />
+    <None Include="Content\sass\font\entypo.woff" />
+    <None Include="Content\sass\font\fontawesome-webfont.eot" />
+    <None Include="Content\sass\font\fontawesome-webfont.ttf" />
+    <None Include="Content\sass\font\fontawesome-webfont.woff" />
+    <Content Include="Views\Home\WithMasterPage.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Views\AccountType\Index.cshtml" />
+    <Content Include="Views\AccountType\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TransactRules.Configuration\TransactRules.Configuration.csproj">
+      <Project>{A859749E-D7B7-47A4-93E0-51B08D644003}</Project>
+      <Name>TransactRules.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactRules.Core.nHibernate\TransactRules.Core.NHibernate.csproj">
+      <Project>{4FE5B0AB-8475-46DC-9634-8BE5BE7260A0}</Project>
+      <Name>TransactRules.Core.NHibernate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactRules.Core\TransactRules.Core.csproj">
+      <Project>{D4E18F7D-6E2F-4FAC-8982-1BA84AE963BC}</Project>
+      <Name>TransactRules.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactRules.Runtime\TransactRules.Runtime.csproj">
+      <Project>{724AF340-0A79-4EF9-BE20-1A449CAF0647}</Project>
+      <Name>TransactRules.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransactRules.UI.Core\TransactRules.UI.Core.csproj">
+      <Project>{73D6C87F-4F59-4B8F-ADC5-B4042EAAC6D5}</Project>
+      <Name>TransactRules.UI.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52135</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
